@@ -50,7 +50,7 @@ public class MainApp {
             }
         }
 
-        System.out.println("\nFinding user by car");
+        System.out.println("\nFinding user by car. First method");
         User userWithCar = userService.getUserByCar("Mercedes", 1980);
         System.out.println("Id = " + userWithCar.getId()
                 + " | First Name = " + userWithCar.getFirstName()
@@ -58,13 +58,21 @@ public class MainApp {
                 + " | Email = " + userWithCar.getEmail()
                 + " | Car = " + userWithCar.getCar().getModel());
 
-        System.out.println("\nFinding user by car");
+        System.out.println("\nFinding user by car.");
         User userWithCar2 = userService.getUserByCar(car2.getModel(), car2.getSeries());
         System.out.println("Id = " + userWithCar2.getId()
                 + " | First Name = " + userWithCar2.getFirstName()
                 + " | Last Name = " + userWithCar2.getLastName()
                 + " | Email = " + userWithCar2.getEmail()
                 + " | Car = " + userWithCar2.getCar().getModel());
+
+        System.out.println("\nFinding user by car. Second method");
+        User userWithCar3 = userService.getUserByCar(car1);
+        System.out.println("Id = " + userWithCar3.getId()
+                + " | First Name = " + userWithCar3.getFirstName()
+                + " | Last Name = " + userWithCar3.getLastName()
+                + " | Email = " + userWithCar3.getEmail()
+                + " | Car = " + userWithCar3.getCar().getModel());
 
         context.close();
     }
